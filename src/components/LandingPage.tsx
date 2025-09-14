@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Navigation from "./Navigation";
 import { 
   Briefcase, 
   MapPin, 
@@ -68,30 +70,8 @@ const LandingPage = () => {
       <div className="fixed bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "-1s" }}></div>
       
       <div className="relative z-10">
-        {/* Header */}
-        <header className="glass-effect border-b border-border/20 sticky top-0 z-50">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center justify-center w-10 h-10 bg-gradient-primary rounded-xl">
-                  <Briefcase className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <h1 className="text-2xl font-bold text-foreground">GigsTZ</h1>
-              </div>
-              <nav className="hidden md:flex items-center space-x-6">
-                <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">How it Works</a>
-                <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-                <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
-                <Button variant="outline" className="glass-effect border-border/50">
-                  Sign In
-                </Button>
-                <Button className="bg-gradient-primary hover:opacity-90 shadow-premium">
-                  Get Started
-                </Button>
-              </nav>
-            </div>
-          </div>
-        </header>
+        {/* Navigation */}
+        <Navigation />
 
         {/* Hero Section */}
         <section className="py-20 lg:py-32">
@@ -307,7 +287,7 @@ const LandingPage = () => {
               <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
                 <a href="#" className="hover:text-foreground transition-colors">Terms</a>
                 <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-                <a href="#" className="hover:text-foreground transition-colors">Support</a>
+                <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
                 <a href="#" className="hover:text-foreground transition-colors">Contact</a>
               </div>
             </div>
